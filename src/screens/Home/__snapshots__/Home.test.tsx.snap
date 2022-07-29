@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen test render a Screen Component 1`] = `<HomeScreen />`;

@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import { NavigationContainer } from "@react-navigation/native";
+import TabNavigator from "./src/navigator/TabNavigator";
+import { UploadContextProvider } from "./src/config/uploadFiles.context";
+interface Props {
+  className?: string;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App: React.FC<Props> = (props) => {
+  return (
+    <UploadContextProvider>
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </UploadContextProvider>
+  );
+};
+
+export default App;
